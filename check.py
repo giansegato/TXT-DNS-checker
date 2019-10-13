@@ -14,7 +14,7 @@ def notify(title, text):
 
 def target_in_dns(domain, target):
     # Linux and MacOS X compatible
-    result = subprocess.run(['nslookup', '-q=txt', domain], stdout=subprocess.PIPE).stdout.decode('utf-8')
+    result = subprocess.run(['dig', domain, 'any'], stdout=subprocess.PIPE).stdout.decode('utf-8')
     return target in result
 
 if __name__ == "__main__":
@@ -24,4 +24,4 @@ if __name__ == "__main__":
         print('.', end='', flush=True)
         time.sleep(_SECONDS)
 
-    notify("DNS Record", "{} verified!")
+    notify("DNS Record", "{} verified!".format(_DOMAIN))
