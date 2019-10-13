@@ -8,7 +8,7 @@ It's been developed when deploying a website to the Firebase hosting, where in c
 
 ## How?
 
-Edit the `_DOMAIN` and `_TARGET` variables to your needs. Then run the script (`python3 check_dns.py`).
+Edit the `_DOMAIN` and `_TARGET` variables to your needs. Then run the script (`python3 check.py`).
 No external script dependency. Working only with Python 3.x onwards.
 
 ## Room for improvement
