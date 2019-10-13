@@ -1,9 +1,16 @@
 import subprocess
 import os
 import time
+import sys
 
-_DOMAIN = 'giansegato.com'
-_TARGET = 'google-site-verification'
+if len(sys.argv) > 1:
+    _DOMAIN = sys.argv[1]
+    if len(sys.argv) > 2:
+        _TARGET = sys.argv[2]
+    else:
+        _TARGET = 'google-site-verification'
+else:
+    _DOMAIN = 'giansegato.com'
 _SECONDS = 30
 
 def notify(title, text):
